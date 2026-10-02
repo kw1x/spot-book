@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/001-create-users.yaml
+  - include:
+      file: db/changelog/002-create-workspaces.yaml
+  - include:
+      file: db/changelog/003-create-bookings.yaml
+  - include:
+      file: db/changelog/004-add-booking-overlap-constraint.yaml
+  - include:
+      file: db/changelog/005-seed-dev-data.yaml

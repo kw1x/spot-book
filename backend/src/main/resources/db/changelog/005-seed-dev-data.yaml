@@ -1,0 +1,456 @@
+databaseChangeLog:
+  - changeSet:
+      id: 005-seed-dev-data
+      author: spotbook-team
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: id, valueComputed: "'a0000000-0000-0000-0000-000000000001'" }
+              - column: { name: email, value: "admin@spotbook.com" }
+              - column: { name: password_hash, value: "$2a$10$atdAHtMicQrxUpfLb67xDOmdD8eT/LOfvxMJYq9hd/YORgs8A/RFu" }
+              - column: { name: full_name, value: "Administrator" }
+              - column: { name: role, value: "ROLE_ADMIN" }
+        - insert:
+            tableName: users
+            columns:
+              - column: { name: id, valueComputed: "'a0000000-0000-0000-0000-000000000002'" }
+              - column: { name: email, value: "employee@spotbook.com" }
+              - column: { name: password_hash, value: "$2a$10$atdAHtMicQrxUpfLb67xDOmdD8eT/LOfvxMJYq9hd/YORgs8A/RFu" }
+              - column: { name: full_name, value: "Alex Rivers" }
+              - column: { name: role, value: "ROLE_USER" }
+
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000001'" }
+              - column: { name: name, value: "Конференц-зал Horizon" }
+              - column: { name: type, value: "MEETING_ROOM" }
+              - column: { name: capacity, valueNumeric: 12 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 60 }
+              - column: { name: pos_y, valueNumeric: 60 }
+              - column: { name: width, valueNumeric: 220 }
+              - column: { name: height, valueNumeric: 160 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000002'" }
+              - column: { name: name, value: "Переговорная Nexus" }
+              - column: { name: type, value: "MEETING_ROOM" }
+              - column: { name: capacity, valueNumeric: 6 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 60 }
+              - column: { name: pos_y, valueNumeric: 250 }
+              - column: { name: width, valueNumeric: 140 }
+              - column: { name: height, valueNumeric: 120 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000003'" }
+              - column: { name: name, value: "Переговорная Aurora" }
+              - column: { name: type, value: "MEETING_ROOM" }
+              - column: { name: capacity, valueNumeric: 6 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 60 }
+              - column: { name: pos_y, valueNumeric: 390 }
+              - column: { name: width, valueNumeric: 140 }
+              - column: { name: height, valueNumeric: 120 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000004'" }
+              - column: { name: name, value: "Фокус-комната Zen" }
+              - column: { name: type, value: "MEETING_ROOM" }
+              - column: { name: capacity, valueNumeric: 2 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 60 }
+              - column: { name: pos_y, valueNumeric: 530 }
+              - column: { name: width, valueNumeric: 100 }
+              - column: { name: height, valueNumeric: 90 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000005'" }
+              - column: { name: name, value: "Телефонная будка Solo" }
+              - column: { name: type, value: "MEETING_ROOM" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 180 }
+              - column: { name: pos_y, valueNumeric: 530 }
+              - column: { name: width, valueNumeric: 80 }
+              - column: { name: height, valueNumeric: 90 }
+              - column: { name: is_active, valueBoolean: true }
+
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000006'" }
+              - column: { name: name, value: "Стол 1" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 340 }
+              - column: { name: pos_y, valueNumeric: 100 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000007'" }
+              - column: { name: name, value: "Стол 2" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 430 }
+              - column: { name: pos_y, valueNumeric: 100 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000008'" }
+              - column: { name: name, value: "Стол 3" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 520 }
+              - column: { name: pos_y, valueNumeric: 100 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000009'" }
+              - column: { name: name, value: "Стол 4" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 340 }
+              - column: { name: pos_y, valueNumeric: 165 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000010'" }
+              - column: { name: name, value: "Стол 5" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 430 }
+              - column: { name: pos_y, valueNumeric: 165 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000011'" }
+              - column: { name: name, value: "Стол 6" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 520 }
+              - column: { name: pos_y, valueNumeric: 165 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000012'" }
+              - column: { name: name, value: "Стол 7" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 660 }
+              - column: { name: pos_y, valueNumeric: 100 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000013'" }
+              - column: { name: name, value: "Стол 8" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 750 }
+              - column: { name: pos_y, valueNumeric: 100 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000014'" }
+              - column: { name: name, value: "Стол 9" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 840 }
+              - column: { name: pos_y, valueNumeric: 100 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000015'" }
+              - column: { name: name, value: "Стол 10" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 660 }
+              - column: { name: pos_y, valueNumeric: 165 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000016'" }
+              - column: { name: name, value: "Стол 11" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 750 }
+              - column: { name: pos_y, valueNumeric: 165 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000017'" }
+              - column: { name: name, value: "Стол 12" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 840 }
+              - column: { name: pos_y, valueNumeric: 165 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000018'" }
+              - column: { name: name, value: "Стол 13" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 340 }
+              - column: { name: pos_y, valueNumeric: 320 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000019'" }
+              - column: { name: name, value: "Стол 14" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 430 }
+              - column: { name: pos_y, valueNumeric: 320 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000020'" }
+              - column: { name: name, value: "Стол 15" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 520 }
+              - column: { name: pos_y, valueNumeric: 320 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000021'" }
+              - column: { name: name, value: "Стол 16" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 340 }
+              - column: { name: pos_y, valueNumeric: 385 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000022'" }
+              - column: { name: name, value: "Стол 17" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 430 }
+              - column: { name: pos_y, valueNumeric: 385 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000023'" }
+              - column: { name: name, value: "Стол 18" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 520 }
+              - column: { name: pos_y, valueNumeric: 385 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000024'" }
+              - column: { name: name, value: "Стол 19" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 660 }
+              - column: { name: pos_y, valueNumeric: 320 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000025'" }
+              - column: { name: name, value: "Стол 20" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 750 }
+              - column: { name: pos_y, valueNumeric: 320 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000026'" }
+              - column: { name: name, value: "Стол 21" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 840 }
+              - column: { name: pos_y, valueNumeric: 320 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000027'" }
+              - column: { name: name, value: "Стол 22" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 660 }
+              - column: { name: pos_y, valueNumeric: 385 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000028'" }
+              - column: { name: name, value: "Стол 23" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 750 }
+              - column: { name: pos_y, valueNumeric: 385 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000029'" }
+              - column: { name: name, value: "Стол 24" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 1 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 840 }
+              - column: { name: pos_y, valueNumeric: 385 }
+              - column: { name: width, valueNumeric: 70 }
+              - column: { name: height, valueNumeric: 45 }
+              - column: { name: is_active, valueBoolean: true }
+
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000030'" }
+              - column: { name: name, value: "Стол 25" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 4 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 400 }
+              - column: { name: pos_y, valueNumeric: 530 }
+              - column: { name: width, valueNumeric: 90 }
+              - column: { name: height, valueNumeric: 60 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000031'" }
+              - column: { name: name, value: "Стол 26" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 4 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 550 }
+              - column: { name: pos_y, valueNumeric: 530 }
+              - column: { name: width, valueNumeric: 90 }
+              - column: { name: height, valueNumeric: 60 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000032'" }
+              - column: { name: name, value: "Стол 27" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 2 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 720 }
+              - column: { name: pos_y, valueNumeric: 530 }
+              - column: { name: width, valueNumeric: 80 }
+              - column: { name: height, valueNumeric: 60 }
+              - column: { name: is_active, valueBoolean: true }
+        - insert:
+            tableName: workspaces
+            columns:
+              - column: { name: id, valueComputed: "'b0000000-0000-0000-0000-000000000033'" }
+              - column: { name: name, value: "Стол 28" }
+              - column: { name: type, value: "DESK" }
+              - column: { name: capacity, valueNumeric: 2 }
+              - column: { name: floor, valueNumeric: 1 }
+              - column: { name: pos_x, valueNumeric: 830 }
+              - column: { name: pos_y, valueNumeric: 530 }
+              - column: { name: width, valueNumeric: 80 }
+              - column: { name: height, valueNumeric: 60 }
+              - column: { name: is_active, valueBoolean: true }

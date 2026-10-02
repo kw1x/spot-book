@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004-add-booking-overlap-constraint
+      author: spotbook-team
+      changes:
+        - sql:
+            splitStatements: true
+            stripComments: true
+            sql: |
+              CREATE EXTENSION IF NOT EXISTS btree_gist;
+              ALTER TABLE bookings
+              ADD CONSTRAINT no_booking_overlap
+              EXCLUDE USING gist (
+                workspace_id WITH =,
+                tsrange(start_time, end_time) WITH &&
+              ) WHERE (status = 'CONFIRMED');

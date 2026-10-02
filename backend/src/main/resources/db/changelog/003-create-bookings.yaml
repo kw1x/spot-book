@@ -1,0 +1,69 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-create-bookings
+      author: spotbook-team
+      changes:
+        - createTable:
+            tableName: bookings
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: workspace_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_bookings_workspace
+                    references: workspaces(id)
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_bookings_user
+                    references: users(id)
+              - column:
+                  name: start_time
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: end_time
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: varchar(30)
+                  defaultValue: CONFIRMED
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
+        - createIndex:
+            indexName: idx_bookings_workspace_time
+            tableName: bookings
+            columns:
+              - column:
+                  name: workspace_id
+              - column:
+                  name: start_time
+              - column:
+                  name: end_time
+        - createIndex:
+            indexName: idx_bookings_user_time
+            tableName: bookings
+            columns:
+              - column:
+                  name: user_id
+              - column:
+                  name: start_time
